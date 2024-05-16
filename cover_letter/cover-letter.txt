@@ -1,0 +1,12 @@
+Dear HIRING_MANAGER,
+I am writing to express my interest in the JOB_TITLE position at COMPANY_NAME as advertised on PORTAL. With my strong background in PHP, JavaScript, TypeScript, React, Node.js, Express and NestJs, I am confident that I possess the skills and experience you are looking for.
+I have over 5 years of experience as a Full Stack Developer, working on web application development and SaaS products. I thrive in collaborative environments and enjoy working across the entire development stack, from creating user-friendly interfaces to building robust backends with Node.js and Symfony. I have worked creating RESTful APIs and am currently improving my skills in unit and integration testing.  In addition, my experience with cloud services such as Amazon Web Services allows me to offer a well rounded skill set for your team.
+I am a highly motivated individual with a strong desire to continuously learn and improve my skills. I keep up to date with the latest advances in web development and enjoy tackling complex problems with innovative solutions.  Mentoring junior developers and fostering a strong team environment is also important to me.
+The opportunity to work on a product that has a positive impact on people's lives is very motivating. The focus on collaboration, flexible work arrangements and employee well-being aligns perfectly with my values.
+I am confident that my skills and experience will be a valuable asset to your team. I have attached my resume for your review and would appreciate the opportunity to discuss my qualifications in more detail.
+Thank you for your time and consideration.
+Sincerely,
+
+Nadir Eliel Jaramillo Rosas
++642902211193
+https://www.linkedin.com/in/nadir-jaramillo/
