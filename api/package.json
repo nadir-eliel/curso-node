@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch",
+    "test:jest": "jest --verbose"
   },
   "author": "Nadir Jaramillo",
   "license": "ISC",
@@ -20,6 +21,9 @@
     "extends": "standard"
   },
   "devDependencies": {
+    "@babel/core": "7.24.5",
+    "@babel/preset-env": "7.24.5",
+    "@babel/register": "7.23.7",
     "jest": "29.7.0",
     "standard": "17.1.0",
     "supertest": "7.0.0"
