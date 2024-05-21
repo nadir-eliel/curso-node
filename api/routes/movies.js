@@ -10,4 +10,4 @@ moviesRouter.post('/', MovieController.create)
 
 moviesRouter.get('/:id', MovieController.getById)
 moviesRouter.patch('/:id', MovieController.update)
-moviesRouter.delete(':id', MovieController.delete)
+moviesRouter.delete('/:id', MovieController.delete)
