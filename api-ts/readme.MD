@@ -62,3 +62,42 @@ app.listen(port, () => {
 ```
 
 //FIXME: Aun no tengo claro por que se instala ts-node si al final hay que agregarlo al script ```npm run dev```
+
+# Database:
+- Corre sobre una imagen docker de MySQL 8.4
+- Script para crear la base de datos
+    ``` CREATE DATABASE `rocket_lab` ```
+
+- Script para el Dockerfile (opcional)
+- Script para crear las tablas
+
+``` 
+   
+CREATE TABLE rocket_lab.node (
+	id INT auto_increment NOT NULL,
+	name varchar(100) NOT NULL,
+	created_at DATETIME NOT NULL,
+	updated_at DATETIME NOT NULL,
+	deleted_at DATETIME NULL,
+	parent_id INT NULL,
+	CONSTRAINT node_PK PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `property` (
+  `key` varchar(100) NOT NULL,
+  `value` decimal(10,3) NOT NULL,
+  `node_id` int NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+    
+    ```
+- Script para insertar algunos valores en las tablas
+
+- Agregamos TypeORM con el siguiente script:
+    (fuente: https://typeorm.io/example-with-express)
+``` npm i typeorm mysql reflect-metadata --save ```
+
+- Agregamos estos dos validadores de la entidad para que no falle el insert 
+```npm install class-validator class-transformer```
