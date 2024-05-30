@@ -101,3 +101,5 @@ CREATE TABLE `property` (
 
 - Agregamos estos dos validadores de la entidad para que no falle el insert 
 ```npm install class-validator class-transformer```
+
+source: https://www.infoq.com/articles/typescript-mysql/
