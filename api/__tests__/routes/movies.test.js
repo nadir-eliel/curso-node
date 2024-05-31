@@ -1,12 +1,41 @@
 import app from '../../app.js'
+// import mysql from 'mysql2/promise'
 import request from 'supertest'
+// import { config } from '../../db.js'
+process.env.NODE_ENV = 'test'
 
 // FIXME:
 // Este test funciona, pero requiere que la app funcione.
 // Es decir, que va a la base de datos, o lee el archivo JSON
 // que se usa como fuente de los datos.
 // Deberia usar un mock
-describe('GET /movies', () => {
+
+// eslint-disable-next-line no-unused-vars
+// let movie
+
+// beforeEach(async () => {
+//   const db = await mysql.createConnection(config)
+//   const result = await db.query(`
+//     INSERT INTO movies.movies (title, year, director, duration, poster, rate)
+//     VALUES('Movie Example', 2024, 'Nadir Jaramillo', 120, 'https://aws:s3/imagen.jpg', 8.8); 
+//     SELECT LAST_INSERT_ID();`)
+//   console.log(result)
+//   movie = result.rows[0]
+//   await db.end() // close db connection
+// })
+
+// afterEach(async function () {
+//   const db = await mysql.createConnection(config)
+//   // delete any data created by test
+//   await db.query('DELETE FROM movies.movies WHERE title="Movie Example";')
+//   await db.end() // close db connection
+// })
+
+// afterAll(async function () {
+//   await db.end() // close db connection
+// })
+
+describe.only('GET /movies', () => {
   it('should responde with a 200 status code and Content-Type JSON', async () => {
     const response = await request(app).get('/movies').send()
     expect(response.statusCode).toBe(200)

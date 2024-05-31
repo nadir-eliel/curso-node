@@ -1,18 +1,12 @@
 import mysql from 'mysql2/promise'
-
-// Esto deberia ir a variables de entorno?
-const config = {
-  host: 'localhost',
-  user: 'root',
-  port: 3306,
-  password: 'pass123',
-  database: 'movies'
-}
+import { config } from '../../db.js'
+console.log(config)
 const connection = await mysql.createConnection(config)
 
 export class MovieModel {
   static async getAll ({ genre }) {
     // TODO: como hacer para que me devuelva un array con los generos de la peli
+    // TODO: Agregar un ORM
     if (genre) {
       const genreLower = genre.toLowerCase()
       const [movies] = await connection
@@ -24,7 +18,7 @@ export class MovieModel {
       return movies
     }
 
-    const [movies, tableInfo] = await connection
+    const [movies] = await connection
       .query('SELECT title, year, director, duration, poster, rate, BIN_TO_UUID(id) as id FROM movies')
     // console.log({ tableInfo })
     return movies
@@ -48,6 +42,7 @@ export class MovieModel {
     const [uuidResult] = await connection.query('SELECT UUID() uuid')
     const [{ uuid }] = uuidResult
 
+    // eslint-disable-next-line no-unused-vars
     const [insertResult] = await connection
       .query(`INSERT INTO movies (id, title, year, duration, director, rate, poster)
               VALUES (UUID_TO_BIN(?),?,?,?,?,?,?)`,
@@ -68,8 +63,8 @@ export class MovieModel {
   }
 
   static async update ({ id, input }) {
-    // FIXME: por algun motivo no está validando el Modelo
-    // deberian los campos opcionales tener un valor default o no pedirlo
+    // Zod no está asignando el valor default, por eso si no viene en el input
+    // se asigna aquí el valor 5 por defecto
     const { title, year, director, duration, poster, rate } = input
 
     const [movie] = await connection
@@ -82,6 +77,6 @@ export class MovieModel {
               director = ?, duration = ?, poster = ?, rate = ?
             WHERE id = UUID_TO_BIN(?)`, [title, year, director, duration, poster, rate, id])
 
-    return updatedMovie // FIXME: aqui deberia devolver el recurso actualizado
+    return updatedMovie
   }
 }

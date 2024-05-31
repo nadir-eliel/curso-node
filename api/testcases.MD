@@ -1,4 +1,5 @@
 # Todos los casos de test que se deberian testear en los endpoints (routes)
+# https://curric.rithmschool.com/springboard/lectures/express-jest-testing/
 - Codigos HTTP (200, 400, 500)
 - GET que devuelvan el cuerpo correcto con todos los campos obligatorios
 - GET que devuelvan el content-type que corresponda

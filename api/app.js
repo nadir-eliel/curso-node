@@ -1,16 +1,21 @@
 import express, { json } from 'express'
 // En ES Modules, hay que poner la extension .js en los imports
 import { createMovieRouter } from './src/routes/movies.js'
-import { corsMiddleware } from './src/middlewares/cors.js'
-import { MovieModel } from './src/models/movie.js'
+import { internalError, unknownEndpoint } from './src/middlewares/middlewares.js'
+import { MovieModel } from './src/models/movies.mysql.js'
+import cors from 'cors'
 
 const app = express()
 
 // middlewares
 app.disable('x-powered-by')
 app.use(json())
-app.use(corsMiddleware)
+app.use(cors())
 
+// routes
 app.use('/movies', createMovieRouter({ movieModel: MovieModel }))
 
+// errors
+app.use(unknownEndpoint)
+app.use(internalError) // FIXME:
 export default app

@@ -19,3 +19,21 @@ export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => c
     return callback(new Error('Not allowed by CORS'))
   }
 })
+
+// middleware de manejo de rutas inexistentes
+export const unknownEndpoint = (req, res) => {
+  res.status(404).send({ error: 'unknown endpoint' })
+}
+
+// general error handler
+export const internalError = (err, req, res) => {
+  // the default status is 500 Internal Server Error
+  const status = err.status || 500
+
+  return res.status(status).json({
+    error: {
+      message: err.message,
+      status
+    }
+  })
+}
