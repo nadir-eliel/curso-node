@@ -1,0 +1,101 @@
+[
+    {
+      "username": "user1",
+      "password": "$2a$04$8xSYt3/46b48zZhGnivJN.ogSYvkAAoXIeSbaaUWxno/1cRoCCfCm",
+      "nombre": "Juan",
+      "apellido": "Perez",
+      "fechaNacimiento": "1980-01-01",
+      "email": "juan.perez@example.com",
+      "direccion": {
+        "calle": "Calle Mayor 123",
+        "ciudad": "Ciudad del Ejemplo",
+        "pais": "España"
+      },
+      "telefono": "+34 612 345 678"
+    },
+    {
+      "username": "user2",
+      "password": "$2a$04$D4GQeTaWsEbQCEaGt6RhteWdbpk3gu3SwnKQMoGpnWY6sRP8SeeTa",
+      "nombre": "Maria",
+      "apellido": "Garcia",
+      "fechaNacimiento": "1990-02-02",
+      "email": "maria.garcia@example.com",
+      "direccion": {
+        "calle": "Avenida Libertad 456",
+        "ciudad": "Ciudad Libre",
+        "pais": "Argentina"
+      },
+      "telefono": "+54 11 876 5432"
+    },
+    {
+      "username": "user3",
+      "password": "$2a$04$ulzjcbDaVUz0FTWDGfPdM.0xn3q0ybZBMWspOJAG5bzSA22udDXm2",
+      "nombre": "Pedro",
+      "apellido": "Lopez",
+      "fechaNacimiento": "2000-03-03",
+      "email": "pedro.lopez@example.com",
+      "direccion": {
+        "calle": "Calle Principal 789",
+        "ciudad": "Ciudad Principal",
+        "pais": "México"
+      },
+      "telefono": "+52 55 123 4567"
+    },
+    {
+      "username": "user4",
+      "password": "$2a$04$A4.NhUW263/wY1s9Y9io3eF/kFGQORyrtQSMGw5wBV/cO1DaFPVaC",
+      "nombre": "Ana",
+      "apellido": "Martinez",
+      "fechaNacimiento": "1975-04-04",
+      "email": "ana.martinez@example.com",
+      "direccion": {
+        "calle": "Paseo del Sol 1011",
+        "ciudad": "Ciudad del Sol",
+        "pais": "Chile"
+      },
+      "telefono": "+56 2 234 5678"
+    },
+    {
+      "username": "user5",
+      "password": "$2a$04$IyhghdFovYAIhzau6KCcted/yntp9nEipnN2wO8HHHDpppaAKffmq",
+      "nombre": "Carlos",
+      "apellido": "Gonzalez",
+      "fechaNacimiento": "1965-05-05",
+      "email": "carlos.gonzalez@example.com",
+      "direccion": {
+        "calle": "Avenida Independencia 1213",
+        "ciudad": "Ciudad Independiente",
+        "pais": "Colombia"
+      },
+      "telefono": "+57 1 789 0123"
+    },
+    {
+      "username": "user6",
+      "password": "$2a$04$aYvHLCPabYQEp.gnTCy9VOKoElkGXytoH6z1iJzMy/DqJLKDqOTu.",
+      "nombre": "Sofia",
+      "apellido": "Ruiz",
+      "fechaNacimiento": "1985-06-06",
+      "email": "sofia.ruiz@example.com",
+      "direccion": {
+        "calle": "Calle de la Paz 1415",
+        "ciudad": "Ciudad de la Paz",
+        "pais": "Perú"
+      },
+      "telefono": "+51 1 456 7890"
+    },
+    {
+      "username": "user7",
+      "password": "$2a$04$lo.hVGou4gZ7YsbxEIGoyuMMhnI0/BPGec/8UQGhUWNu7jJjspk1q",
+      "nombre": "Diego",
+      "apellido": "Sanchez",
+      "fechaNacimiento": "1995-07-07",
+      "email": "diego.sanchez@example.com",
+      "direccion": {
+        "calle": "Avenida Libertad 1617",
+        "ciudad": "Ciudad Libre",
+        "pais": "Brasil"
+      },
+      "telefono": "+55 11 234 5678"
+    }
+  ]
+  

@@ -1,8 +1,10 @@
 import express, { json } from 'express'
 // En ES Modules, hay que poner la extension .js en los imports
 import { createMovieRouter } from './src/routes/movies.js'
+import { createUserRouter } from './src/routes/user.js'
 import { internalError, unknownEndpoint } from './src/middlewares/middlewares.js'
-import { MovieModel } from './src/models/movies.mysql.js'
+import { MovieModel } from './src/models/movies.js'
+import { UserModel } from './src/models/user.js'
 import cors from 'cors'
 
 const app = express()
@@ -13,6 +15,7 @@ app.use(json())
 app.use(cors())
 
 // routes
+app.use('/login', createUserRouter({ userModel: UserModel }))
 app.use('/movies', createMovieRouter({ movieModel: MovieModel }))
 
 // errors
