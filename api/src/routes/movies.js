@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { MovieController } from '../controllers/movies.js'
+import { authenticateToken } from '../middlewares/middlewares.js'
 
 export const createMovieRouter = ({ movieModel }) => {
   // Con esta definicion exportamos el router, sin necesidad
@@ -7,11 +8,11 @@ export const createMovieRouter = ({ movieModel }) => {
   const moviesRouter = Router()
   const movieController = new MovieController({ movieModel })
 
-  moviesRouter.get('/', movieController.getAll)
-  moviesRouter.post('/', movieController.create)
-  moviesRouter.get('/:id', movieController.getById)
-  moviesRouter.patch('/:id', movieController.update)
-  moviesRouter.delete('/:id', movieController.delete)
+  moviesRouter.get('/', authenticateToken, movieController.getAll)
+  moviesRouter.post('/', authenticateToken, movieController.create)
+  moviesRouter.get('/:id', authenticateToken, movieController.getById)
+  moviesRouter.patch('/:id', authenticateToken, movieController.update)
+  moviesRouter.delete('/:id', authenticateToken, movieController.delete)
 
   return moviesRouter
 }

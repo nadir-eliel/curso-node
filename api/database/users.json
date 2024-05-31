@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "username": "user1",
     "password": "$2a$04$/nHq2VjM73i8Jdg5DaJQ4et5g7tkPaYA0q5poU/VlxqJ89G5Ox0Oq",
     "firstName": "Juan",
@@ -14,6 +15,7 @@
     "phoneNumber": "+34 612 345 678"
   },
   {
+    "id": 2,
     "username": "user2",
     "password": "$2a$04$nyqNzd434Nyli837UTbXUOq3RyF4aQBZJ0aMu4wstMkQRvPXOvP/a",
     "firstName": "Maria",
@@ -28,6 +30,7 @@
     "phoneNumber": "+54 11 876 5432"
   },
   {
+    "id": 3,
     "username": "user3",
     "password": "$2a$04$WOR8z5aKM2hVq3YVImBG6Oz2/cteaFWQSDjQK0Myq5eHlRyasaC8e",
     "firstName": "Pedro",
@@ -42,6 +45,7 @@
     "phoneNumber": "+52 55 123 4567"
   },
   {
+    "id": 4,
     "username": "user4",
     "password": "$2a$04$lqeL6YINJ5wsoioa0g.FieGM.5Gjj8EE9Nnv7wBq6gpcJK6SM2h.K",
     "firstName": "Ana",
@@ -56,6 +60,7 @@
     "phoneNumber": "+56 2 234 5678"
   },
   {
+    "id": 5,
     "username": "user5",
     "password": "$2a$04$.l5p16pL/m8nX/mM8dhZzut8QV6xTdfH1J1FOKbNyB6FwpMuXnH/e",
     "firstName": "Carlos",
@@ -70,6 +75,7 @@
     "phoneNumber": "+57 1 789 0123"
   },
   {
+    "id": 6,
     "username": "user6",
     "password": "$2a$04$Dvg3N4oZZopwuPt4BbPGnO9KsiekMpuPeypz.Tag9pSnwuYyTvhAO",
     "firstName": "Sofia",
@@ -84,6 +90,7 @@
     "phoneNumber": "+51 1 456 7890"
   },
   {
+    "id": 7,
     "username": "user7",
     "password": "$2a$04$/HdaHwzXaQtOcdFZbUJvRuPTQ9LpZFgG68qVu1lqofnihN8UMxoNi",
     "firstName": "Diego",
