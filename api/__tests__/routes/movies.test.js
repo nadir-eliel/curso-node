@@ -17,7 +17,7 @@ process.env.NODE_ENV = 'test'
 //   const db = await mysql.createConnection(config)
 //   const result = await db.query(`
 //     INSERT INTO movies.movies (title, year, director, duration, poster, rate)
-//     VALUES('Movie Example', 2024, 'Nadir Jaramillo', 120, 'https://aws:s3/imagen.jpg', 8.8); 
+//     VALUES('Movie Example', 2024, 'Nadir Jaramillo', 120, 'https://aws:s3/imagen.jpg', 8.8);
 //     SELECT LAST_INSERT_ID();`)
 //   console.log(result)
 //   movie = result.rows[0]
@@ -35,7 +35,7 @@ process.env.NODE_ENV = 'test'
 //   await db.end() // close db connection
 // })
 
-describe.only('GET /movies', () => {
+describe('GET /movies', () => {
   it('should responde with a 200 status code and Content-Type JSON', async () => {
     const response = await request(app).get('/movies').send()
     expect(response.statusCode).toBe(200)

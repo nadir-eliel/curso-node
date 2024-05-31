@@ -1,101 +1,100 @@
 [
-    {
-      "username": "user1",
-      "password": "$2a$04$8xSYt3/46b48zZhGnivJN.ogSYvkAAoXIeSbaaUWxno/1cRoCCfCm",
-      "nombre": "Juan",
-      "apellido": "Perez",
-      "fechaNacimiento": "1980-01-01",
-      "email": "juan.perez@example.com",
-      "direccion": {
-        "calle": "Calle Mayor 123",
-        "ciudad": "Ciudad del Ejemplo",
-        "pais": "España"
-      },
-      "telefono": "+34 612 345 678"
+  {
+    "username": "user1",
+    "password": "$2a$04$/nHq2VjM73i8Jdg5DaJQ4et5g7tkPaYA0q5poU/VlxqJ89G5Ox0Oq",
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "dateOfBirth": "1980-01-01",
+    "email": "juan.perez@example.com",
+    "address": {
+      "street": "Calle Mayor 123",
+      "city": "Ciudad del Ejemplo",
+      "country": "Spain"
     },
-    {
-      "username": "user2",
-      "password": "$2a$04$D4GQeTaWsEbQCEaGt6RhteWdbpk3gu3SwnKQMoGpnWY6sRP8SeeTa",
-      "nombre": "Maria",
-      "apellido": "Garcia",
-      "fechaNacimiento": "1990-02-02",
-      "email": "maria.garcia@example.com",
-      "direccion": {
-        "calle": "Avenida Libertad 456",
-        "ciudad": "Ciudad Libre",
-        "pais": "Argentina"
-      },
-      "telefono": "+54 11 876 5432"
+    "phoneNumber": "+34 612 345 678"
+  },
+  {
+    "username": "user2",
+    "password": "$2a$04$nyqNzd434Nyli837UTbXUOq3RyF4aQBZJ0aMu4wstMkQRvPXOvP/a",
+    "firstName": "Maria",
+    "lastName": "Garcia",
+    "dateOfBirth": "1990-02-02",
+    "email": "maria.garcia@example.com",
+    "address": {
+      "street": "Avenida Libertad 456",
+      "city": "Ciudad Libre",
+      "country": "Argentina"
     },
-    {
-      "username": "user3",
-      "password": "$2a$04$ulzjcbDaVUz0FTWDGfPdM.0xn3q0ybZBMWspOJAG5bzSA22udDXm2",
-      "nombre": "Pedro",
-      "apellido": "Lopez",
-      "fechaNacimiento": "2000-03-03",
-      "email": "pedro.lopez@example.com",
-      "direccion": {
-        "calle": "Calle Principal 789",
-        "ciudad": "Ciudad Principal",
-        "pais": "México"
-      },
-      "telefono": "+52 55 123 4567"
+    "phoneNumber": "+54 11 876 5432"
+  },
+  {
+    "username": "user3",
+    "password": "$2a$04$WOR8z5aKM2hVq3YVImBG6Oz2/cteaFWQSDjQK0Myq5eHlRyasaC8e",
+    "firstName": "Pedro",
+    "lastName": "Lopez",
+    "dateOfBirth": "2000-03-03",
+    "email": "pedro.lopez@example.com",
+    "address": {
+      "street": "Calle Principal 789",
+      "city": "Ciudad Principal",
+      "country": "Mexico"
     },
-    {
-      "username": "user4",
-      "password": "$2a$04$A4.NhUW263/wY1s9Y9io3eF/kFGQORyrtQSMGw5wBV/cO1DaFPVaC",
-      "nombre": "Ana",
-      "apellido": "Martinez",
-      "fechaNacimiento": "1975-04-04",
-      "email": "ana.martinez@example.com",
-      "direccion": {
-        "calle": "Paseo del Sol 1011",
-        "ciudad": "Ciudad del Sol",
-        "pais": "Chile"
-      },
-      "telefono": "+56 2 234 5678"
+    "phoneNumber": "+52 55 123 4567"
+  },
+  {
+    "username": "user4",
+    "password": "$2a$04$lqeL6YINJ5wsoioa0g.FieGM.5Gjj8EE9Nnv7wBq6gpcJK6SM2h.K",
+    "firstName": "Ana",
+    "lastName": "Martinez",
+    "dateOfBirth": "1975-04-04",
+    "email": "ana.martinez@example.com",
+    "address": {
+      "street": "Paseo del Sol 1011",
+      "city": "Ciudad del Sol",
+      "country": "Chile"
     },
-    {
-      "username": "user5",
-      "password": "$2a$04$IyhghdFovYAIhzau6KCcted/yntp9nEipnN2wO8HHHDpppaAKffmq",
-      "nombre": "Carlos",
-      "apellido": "Gonzalez",
-      "fechaNacimiento": "1965-05-05",
-      "email": "carlos.gonzalez@example.com",
-      "direccion": {
-        "calle": "Avenida Independencia 1213",
-        "ciudad": "Ciudad Independiente",
-        "pais": "Colombia"
-      },
-      "telefono": "+57 1 789 0123"
+    "phoneNumber": "+56 2 234 5678"
+  },
+  {
+    "username": "user5",
+    "password": "$2a$04$.l5p16pL/m8nX/mM8dhZzut8QV6xTdfH1J1FOKbNyB6FwpMuXnH/e",
+    "firstName": "Carlos",
+    "lastName": "Gonzalez",
+    "dateOfBirth": "1965-05-05",
+    "email": "carlos.gonzalez@example.com",
+    "address": {
+      "street": "Avenida Independencia 1213",
+      "city": "Ciudad Independiente",
+      "country": "Colombia"
     },
-    {
-      "username": "user6",
-      "password": "$2a$04$aYvHLCPabYQEp.gnTCy9VOKoElkGXytoH6z1iJzMy/DqJLKDqOTu.",
-      "nombre": "Sofia",
-      "apellido": "Ruiz",
-      "fechaNacimiento": "1985-06-06",
-      "email": "sofia.ruiz@example.com",
-      "direccion": {
-        "calle": "Calle de la Paz 1415",
-        "ciudad": "Ciudad de la Paz",
-        "pais": "Perú"
-      },
-      "telefono": "+51 1 456 7890"
+    "phoneNumber": "+57 1 789 0123"
+  },
+  {
+    "username": "user6",
+    "password": "$2a$04$Dvg3N4oZZopwuPt4BbPGnO9KsiekMpuPeypz.Tag9pSnwuYyTvhAO",
+    "firstName": "Sofia",
+    "lastName": "Ruiz",
+    "dateOfBirth": "1985-06-06",
+    "email": "sofia.ruiz@example.com",
+    "address": {
+      "street": "Calle de la Paz 1415",
+      "city": "Ciudad de la Paz",
+      "country": "Peru"
     },
-    {
-      "username": "user7",
-      "password": "$2a$04$lo.hVGou4gZ7YsbxEIGoyuMMhnI0/BPGec/8UQGhUWNu7jJjspk1q",
-      "nombre": "Diego",
-      "apellido": "Sanchez",
-      "fechaNacimiento": "1995-07-07",
-      "email": "diego.sanchez@example.com",
-      "direccion": {
-        "calle": "Avenida Libertad 1617",
-        "ciudad": "Ciudad Libre",
-        "pais": "Brasil"
-      },
-      "telefono": "+55 11 234 5678"
-    }
-  ]
-  
+    "phoneNumber": "+51 1 456 7890"
+  },
+  {
+    "username": "user7",
+    "password": "$2a$04$/HdaHwzXaQtOcdFZbUJvRuPTQ9LpZFgG68qVu1lqofnihN8UMxoNi",
+    "firstName": "Diego",
+    "lastName": "Sanchez",
+    "dateOfBirth": "1995-07-07",
+    "email": "diego.sanchez@example.com",
+    "address": {
+      "street": "Avenida Libertad 1617",
+      "city": "Ciudad Libre",
+      "country": "Brazil"
+    },
+    "phoneNumber": "+55 11 234 5678"
+  }
+]
