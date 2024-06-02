@@ -29,4 +29,39 @@ export class UserModel {
     }
     return null
   }
+
+  static async create (input) {
+    const user = users.find(item => item.username === input.username)
+    const nextId = users.length + 1
+    if (user) {
+      return null
+    }
+
+    const { password, ...rest } = input
+    const saltRounds = 1 // Recomended 10
+    const encryptedPass = await bcrypt.hash(password, saltRounds)
+
+    const newUser = {
+      id: nextId,
+      password: encryptedPass,
+      ...rest
+    }
+    try {
+      users.push(newUser)
+      fs.writeFileSync('./database/users.json', JSON.stringify(users))
+      return { id: nextId, ...rest }
+    } catch (err) {
+      console.error(err)
+      return null
+    }
+  }
+
+  static async delete (username) {
+    const filteredUsers = users.filter(item => item.username !== username)
+    fs.writeFileSync('./database/users.json', JSON.stringify(filteredUsers))
+  }
+
+  static getTotal () {
+    return users.length
+  }
 }

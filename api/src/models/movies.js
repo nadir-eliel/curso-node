@@ -21,7 +21,7 @@ export class MovieModel {
   }
 
   static async create ({ input }) {
-    const newMovie = { // TODO: que hace esto? el spread operator
+    const newMovie = {
       id: randomUUID(),
       ...input
     }

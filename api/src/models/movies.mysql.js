@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise'
 import { config } from '../../db.js'
-console.log(config)
+
 const connection = await mysql.createConnection(config)
 
 export class MovieModel {

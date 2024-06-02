@@ -19,4 +19,16 @@ export class UserController {
       res.status(401).json({ message: 'User or password incorrect' })
     }
   }
+  create = async (req, res) => {
+    const result = validateUser(req.body)
+    if (!result.success) {
+      return res.status(400).json({ error: JSON.parse(result.error.message) })
+    }
+    const user = await this.userModel.create(result.data)
+    if (user) {
+      res.status(201).json(user)
+    } else {
+      res.status(400).json({ message: 'Error creating User' })
+    }
+  }
 }

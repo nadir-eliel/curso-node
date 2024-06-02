@@ -1,4 +1,5 @@
 import cors from 'cors'
+import jwt from 'jsonwebtoken'
 
 const ACCEPTED_ORIGINS = [
   'http://localhost:8080',
@@ -46,7 +47,7 @@ export const authenticateToken = (req, res, next) => {
   jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
     console.log(err)
 
-    if (err) return res.sendStatus(403).json({ message: 'expired token' })
+    if (err) return res.sendStatus(401).json({ message: 'Not authorized' })
 
     req.user = user
 

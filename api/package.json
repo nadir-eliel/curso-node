@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev node --env-file=.env --watch index.js",
-    "test": "cross-env NODE_ENV=test jest --watch --coverage"
+    "test": "cross-env NODE_ENV=test jest --watch --verbose "
   },
   "author": "Nadir Jaramillo",
   "license": "ISC",

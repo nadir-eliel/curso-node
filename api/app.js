@@ -15,7 +15,7 @@ app.use(json())
 app.use(cors())
 
 // routes
-app.use('/login', createUserRouter({ userModel: UserModel }))
+app.use('/users', createUserRouter({ userModel: UserModel }))
 app.use('/movies', createMovieRouter({ movieModel: MovieModel }))
 
 // errors

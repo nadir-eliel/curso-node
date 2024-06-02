@@ -2,7 +2,17 @@ import z from 'zod'
 
 const userSchema = z.object({
   username: z.string(),
-  password: z.string()
+  password: z.string(),
+  firstName: z.string(),
+  lastName: z.string(),
+  dateOfBirth: z.string().date(),
+  email: z.string().email(),
+  address: z.object({
+    street: z.string(),
+    city: z.string(),
+    country: z.string()
+  }),
+  phoneNumber: z.string()
 })
 
 export function validateUser (input) {
