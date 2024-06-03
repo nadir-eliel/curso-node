@@ -8,3 +8,10 @@
 - POST/PATCH que devuelva mensaje de error cuando el body no es correcto
 - DELETE mensaje de confirmacion de borrado
 -
+
+NOTAS: En caso de que aparezca este error: 
+ ```import http from 'node:http'; ^^^^^^ SyntaxError: Cannot use import statement outside a module```
+ la solucion es agregar en el script de test:  ```NODE_OPTIONS=--experimental-vm-modules```
+
+Fuente:
+https://stackoverflow.com/questions/74289336/jest-node-js-syntaxerror-cannot-use-import-statement-outside-a-module

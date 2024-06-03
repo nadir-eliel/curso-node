@@ -36,6 +36,7 @@ process.env.NODE_ENV = 'test'
 // })
 beforeAll(() => {
   process.env.TOKEN_SECRET = 'secret-for-jwt'
+  process.env.OMDB_APIKEY = '6f5b80a6'
 })
 
 describe('GET /movies', () => {
@@ -292,5 +293,60 @@ describe('UPDATE /movies/id', () => {
       .set('Authorization', 'Bearer fakeToken')
       .send({})
     expect(response.statusCode).toBe(401)
+  })
+})
+
+describe('GET /movies/external', () => {
+  it('should responde with a 200 status code and Content-Type JSON', async () => {
+    const title = 'river'
+    const response = await request(app)
+      .get(`/movies/external?title=${title}`)
+      .send()
+    expect(response.statusCode).toBe(200)
+    expect(response.header['content-type']).toBe('application/json; charset=utf-8')
+  })
+
+  it('should return error when title is missing', async () => {
+    const title = ''
+    const response = await request(app)
+      .get(`/movies/external?title=${title}`)
+      .send()
+    expect(response.statusCode).toBe(400)
+    expect(response.body).toEqual({ error: 'Title required' })
+  })
+
+  it('should return an object', async () => {
+    const title = 'river'
+    const resMovie = await request(app)
+      .get(`/movies/external?title=${title}`)
+      .send()
+
+    const {
+      Title, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Ratings,
+      Metascore, imdbRating, imdbVotes, imdbID, Type, totalSeasons, Response
+    } = resMovie.body
+
+    expect(Title).toBeDefined()
+    expect(Year).toBeDefined()
+    expect(Rated).toBeDefined()
+    expect(Released).toBeDefined()
+    expect(Runtime).toBeDefined()
+    expect(Genre).toBeDefined()
+    expect(Director).toBeDefined()
+    expect(Writer).toBeDefined()
+    expect(Actors).toBeDefined()
+    expect(Plot).toBeDefined()
+    expect(Language).toBeDefined()
+    expect(Country).toBeDefined()
+    expect(Awards).toBeDefined()
+    expect(Poster).toBeDefined()
+    expect(Ratings).toBeInstanceOf(Array)
+    expect(Metascore).toBeDefined()
+    expect(imdbRating).toBeDefined()
+    expect(imdbVotes).toBeDefined()
+    expect(imdbID).toBeDefined()
+    expect(Type).toBeDefined()
+    expect(totalSeasons).toBeDefined()
+    expect(Response).toBeDefined()
   })
 })

@@ -8,12 +8,12 @@ export const createMovieRouter = ({ movieModel }) => {
   const moviesRouter = Router()
   const movieController = new MovieController({ movieModel })
 
+  moviesRouter.get('/external', movieController.getExternalData)
   moviesRouter.get('/', authenticateToken, movieController.getAll)
   moviesRouter.post('/', authenticateToken, movieController.create)
   moviesRouter.get('/:id', authenticateToken, movieController.getById)
   moviesRouter.patch('/:id', authenticateToken, movieController.update)
   moviesRouter.delete('/:id', authenticateToken, movieController.delete)
-
   return moviesRouter
 }
 

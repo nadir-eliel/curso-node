@@ -1,6 +1,7 @@
 // import { MovieModel } from '../models/movie.js'
 // import { MovieModel } from '../models/movies.mysql.js'
 import { validateMovie, validatePartialMovie } from '../schemas/movie.schema.js'
+import fetch from 'node-fetch'
 
 export class MovieController {
   /** Cada una de estas funciones deberian tener un try-catch para
@@ -54,5 +55,30 @@ export class MovieController {
     const { id } = req.params
     const updatedMovie = await this.movieModel.update({ id, input: result.data })
     res.json(updatedMovie)
+  }
+
+  getExternalData = async (req, res) => {
+    // https://www.omdbapi.com/
+    const apiKey = process.env.OMDB_APIKEY
+    const { title } = req.query
+    if (!title) {
+      return res.status(400).json({ error: 'Title required' })
+    }
+    const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`
+    const options = {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }
+
+    try {
+      const response = await fetch(url, options)
+      const json = await response.json()
+      return res.status(200).json(json)
+    } catch (error) {
+      console.error(error)
+      return res.status(404).json({ error: error.Error })
+    }
   }
 }
