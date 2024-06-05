@@ -1,18 +1,18 @@
-import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
-import { Nodes } from "./node.entity";
+import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm'
+import { Nodes } from './node.entity'
 
 @Entity({ name: 'property' })
 export class Property {
-    @PrimaryColumn({name: 'node_id'})
+  @PrimaryColumn({ name: 'node_id' })
     nodeId: number
 
-    @PrimaryColumn()
+  @PrimaryColumn()
     key: string
 
-    @Column()
+  @Column()
     value: number
 
-    @ManyToOne(() => Nodes, node => node.properties)
-    @JoinColumn({ name: 'node_id' })
-    node: Nodes;
+  @ManyToOne(() => Nodes, node => node.properties)
+  @JoinColumn({ name: 'node_id' })
+    node: Nodes
 }

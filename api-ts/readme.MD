@@ -103,3 +103,8 @@ CREATE TABLE `property` (
 ```npm install class-validator class-transformer```
 
 source: https://www.infoq.com/articles/typescript-mysql/
+
+
+// NOTAS del curso de midudev de NodeJs - Typescript (https://www.youtube.com/watch?v=ZpY5KdGQvwI)
+- usar ts-node-dev en lugar de ts-node (porque tiene un watch de cambios como nodemon)
+- usar ts-standard como linter

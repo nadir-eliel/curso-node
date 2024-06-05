@@ -1,17 +1,16 @@
-import { IsString, IsNotEmpty, IsInt, IsPositive, IsOptional } from 'class-validator';
+import { IsString, IsNotEmpty, IsInt, IsPositive, IsOptional } from 'class-validator'
 
 export class PropertyDto {
-    @IsString()
-    @IsNotEmpty()
-    key: string;
+  @IsString()
+  @IsNotEmpty()
+    key: string
 
-    @IsInt()
-    @IsPositive()
-    @IsOptional()
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
     nodeId: number
 
-    
-    @IsInt()
-    @IsPositive()
+  @IsInt()
+  @IsPositive()
     value: number
 }
