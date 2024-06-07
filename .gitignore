@@ -3,3 +3,4 @@ intro/node_modules
 api/node_modules
 api-ts/node_modules
 */.env
+*/dist

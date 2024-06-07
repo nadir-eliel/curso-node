@@ -3,8 +3,8 @@ import express, { json } from 'express'
 import { createMovieRouter } from './src/routes/movies.js'
 import { createUserRouter } from './src/routes/user.js'
 import { internalError, unknownEndpoint } from './src/middlewares/middlewares.js'
-import { MovieModel } from './src/models/movies.js'
-import { UserModel } from './src/models/user.js'
+import { MovieModel } from './src/models/movies.mysql.js'
+import { UserModel } from './src/models/user.mysql.js'
 import cors from 'cors'
 
 const app = express()

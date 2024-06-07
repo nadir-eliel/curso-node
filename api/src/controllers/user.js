@@ -1,4 +1,4 @@
-import { validateUser } from '../schemas/user.schema.js'
+import { validateLogin, validateUser } from '../schemas/user.schema.js'
 
 export class UserController {
   constructor ({ userModel }) {
@@ -6,8 +6,7 @@ export class UserController {
   }
 
   login = async (req, res) => {
-    const result = validateUser(req.body)
-
+    const result = validateLogin(req.body)
     if (!result.success) {
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
