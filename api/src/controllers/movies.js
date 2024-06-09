@@ -13,14 +13,16 @@ export class MovieController {
   }
 
   getAll = async (req, res) => {
-    const { genre } = req.query
-    const movies = await this.movieModel.getAll({ genre })
+    const { year } = req.query
+    // const movies = await this.movieModel.getAll({ genre })
+    const movies = await this.movieModel.findAll({ where: { year } })
     res.json(movies)
   }
 
   getById = async (req, res) => {
     const { id } = req.params
-    const movie = await this.movieModel.getById({ id })
+    // const movie = await this.movieModel.getById({ id })
+    const movie = await this.movieModel.findByPk(id)
     if (movie) return res.status(200).json(movie)
 
     res.status(404).json({ message: 'Movie not found' })
@@ -32,15 +34,17 @@ export class MovieController {
     if (!result.success) {
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
-    const newMovie = await this.movieModel.create({ input: result.data })
+    const newMovie = await this.movieModel.create(result.data)
     res.status(201).json(newMovie)
   }
 
   delete = async (req, res) => {
     const { id } = req.params
-    const result = await this.movieModel.delete({ id })
-
-    if (result === false) {
+    // const result = await this.movieModel.delete({ id })
+    const result = await this.movieModel.destroy({
+      where: { id }
+    })
+    if (result === 0) {
       return res.status(404).json({ message: 'Movie not found' })
     }
     res.status(200).json({ message: 'Movie deleted' })
@@ -53,8 +57,18 @@ export class MovieController {
       return res.status(400).json({ error: JSON.parse(result.error.message) })
     }
     const { id } = req.params
-    const updatedMovie = await this.movieModel.update({ id, input: result.data })
-    res.json(updatedMovie)
+    // const updatedMovie = await this.movieModel.update({ id, input: result.data })
+    const { title, year, director, duration, poster, rate } = result.data
+    const updatedMovie = await this.movieModel.update(
+      { title, year, director, duration, poster, rate },
+      { where: { id } }
+    )
+
+    if (updatedMovie[0] === 1) {
+      res.json(result.data)
+    } else {
+      res.status(400).json({ error: 'Was not possible update' })
+    }
   }
 
   getExternalData = async (req, res) => {

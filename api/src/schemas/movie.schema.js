@@ -1,7 +1,14 @@
 import z from 'zod'
 
 const movieSchema = z.object({
-  title: z.string({ invalid_type_error: 'Movie title must be a string', required_error: 'Movie title is required' }),
+  title: z.string(
+    {
+      invalid_type_error: 'Movie title must be a string',
+      required_error: 'Movie title is required'
+    })
+    .trim()
+    .min(5, { message: 'Must be 5 or more characters long' })
+    .max(255, { message: 'Must be 5 or fewer characters long' }),
   year: z.number().int().min(1900).max(2025),
   director: z.string(),
   duration: z.number().int().positive(),

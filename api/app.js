@@ -3,8 +3,10 @@ import express, { json } from 'express'
 import { createMovieRouter } from './src/routes/movies.js'
 import { createUserRouter } from './src/routes/user.js'
 import { internalError, unknownEndpoint } from './src/middlewares/middlewares.js'
-import { MovieModel } from './src/models/movies.mysql.js'
-import { UserModel } from './src/models/user.mysql.js'
+// import { MovieModel } from './src/models/movies.mysql.js'
+// import { UserModel } from './src/models/user.mysql.js'
+import { Movie } from './src/models/sequelize/movie.model.js'
+import { User } from './src/models/sequelize/user.model.js'
 import cors from 'cors'
 
 const app = express()
@@ -15,8 +17,8 @@ app.use(json())
 app.use(cors())
 
 // routes
-app.use('/users', createUserRouter({ userModel: UserModel }))
-app.use('/movies', createMovieRouter({ movieModel: MovieModel }))
+app.use('/users', createUserRouter({ userModel: User }))
+app.use('/movies', createMovieRouter({ movieModel: Movie }))
 
 // errors
 app.use(unknownEndpoint)
